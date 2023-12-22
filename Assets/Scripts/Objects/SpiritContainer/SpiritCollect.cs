@@ -2,14 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class SpiritCollect : MonoBehaviour
 {
     [SerializeField] GameObject emptyContainer;
-    public Compass compass;
+    GameObject compass;
+    Compass compassScript;
+    EnemySpawner spawner;
+    private void Start()
+    {
+        spawner = GetComponent<EnemySpawner>();
+        compass = GameObject.Find("Compass");
+        compassScript = compass.GetComponent<Compass>();
+    }
+
     public void CollectSpirit()
     {
-        compass.enabled = false;
+        if (compassScript != null)
+        {
+            compassScript.enabled = false;
+        }
+
+        spawner.SpawnEnemies();
         Instantiate(emptyContainer, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

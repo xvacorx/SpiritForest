@@ -12,11 +12,6 @@ public class Compass : MonoBehaviour
     private Transform player;
     private Transform targetTotem;
     private Light compassLight;
-
-    private void Awake()
-    {
-        this.enabled = false;
-    }
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
