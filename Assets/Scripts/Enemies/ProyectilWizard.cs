@@ -5,7 +5,7 @@ using UnityEngine;
 public class ProyectilWizard : MonoBehaviour
 {
     public float velocidadProyectil = 10.0f;
-    public int danioProyectil = 20;
+    int danioProyectil = 10;
     public GameObject explosionPrefab;
 
     private Transform jugador;
@@ -28,13 +28,10 @@ public class ProyectilWizard : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             StatsManager statsManager = other.GetComponent<StatsManager>();
-            if (statsManager != null)
-            {
-                //statsManager.RecibirDanio(danioProyectil);
-            }
+            statsManager.RecibirDanio(danioProyectil);
             DestruirProyectil();
         }
-        else
+        if (!other.CompareTag("Enemy"))
         {
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             DestruirProyectil();

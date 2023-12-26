@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
 {
-    public int vida = 100;
+    int vida = 3;
     public GameObject efectoAlMorirPrefab;
     public void RecibirDanio(int cantidadDanio)
     {
