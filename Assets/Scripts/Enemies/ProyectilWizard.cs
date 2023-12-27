@@ -25,9 +25,8 @@ public class ProyectilWizard : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.gameObject.TryGetComponent(out StatsManager statsManager))
         {
-            StatsManager statsManager = other.GetComponent<StatsManager>();
             statsManager.RecibirDanio(danioProyectil);
             DestruirProyectil();
         }

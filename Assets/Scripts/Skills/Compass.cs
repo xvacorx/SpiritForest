@@ -1,51 +1,102 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using TMPro;
 using UnityEngine;
 
 public class Compass : MonoBehaviour
 {
-    public float startScalingDistance = 30f;
-    public float minScalingDistance = 15f;
-    public float distanceFromPlayer = 5f;
-    public float heightAboveGround = 0f;
+    float startScalingDistance = 30f;
+    float minScalingDistance = 15f;
+    float distanceFromPlayer = 5f;
+    float heightAboveGround = 0f;
 
-    private Transform player;
-    private Transform targetTotem;
-    private Light compassLight;
+    Transform player;
+    Transform targetTotem;
+    Light compassLight;
+    bool isOnCooldown = false;
+    float lastActivationTime;
+
+    public bool compassActive = true;
+    public float cooldownTime = 10f;
+    public TextMeshProUGUI cooldownText;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        compassLight = GetComponent<Light>();  // Asignar la luz al inicio
+        compassLight = GetComponent<Light>();
         FindClosestTotem();
     }
 
     void Update()
     {
-        if (targetTotem == null)
+        UpdateCooldown();
+
+        if (isOnCooldown)
         {
-            FindClosestTotem();
-            return;
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                Debug.Log("cooldown");
+            }
+        } // Verificación cooldown
+
+        if (!isOnCooldown)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                ActivateCompass();
+                compassActive = true;
+            }
         }
 
-        float distanceToTotem = Vector3.Distance(player.position, targetTotem.position);
-
-        // Escalar la brújula gradualmente hacia cero a medida que te acercas al totem
-        float scale = Mathf.Lerp(1f, 0f, Mathf.InverseLerp(startScalingDistance, minScalingDistance, distanceToTotem));
-        transform.localScale = new Vector3(scale, scale, scale);
-
-        // Ajustar la intensidad de la luz según la escala
-        if (compassLight != null)
+        if (compassActive)
         {
-            compassLight.intensity = scale * 10f;
+            if (targetTotem == null)
+            {
+                FindClosestTotem();
+                return;
+            }
+
+            float distanceToTotem = Vector3.Distance(player.position, targetTotem.position);
+
+            float scale = Mathf.Lerp(1f, 0f, Mathf.InverseLerp(startScalingDistance, minScalingDistance, distanceToTotem));
+            transform.localScale = new Vector3(scale, scale, scale);
+
+            if (compassLight != null)
+            {
+                compassLight.intensity = scale * 10f;
+            }
+
+            Vector3 targetPosition = new Vector3(targetTotem.position.x, player.position.y + heightAboveGround, targetTotem.position.z);
+            Vector3 directionToTotem = targetPosition - player.position;
+            Vector3 desiredPosition = player.position + directionToTotem.normalized * distanceFromPlayer;
+
+            transform.LookAt(targetPosition);
+            transform.position = desiredPosition;
         }
+    }
 
-        // Actualizar posición de la brújula
-        Vector3 targetPosition = new Vector3(targetTotem.position.x, player.position.y + heightAboveGround, targetTotem.position.z);
-        Vector3 directionToTotem = targetPosition - player.position;
-        Vector3 desiredPosition = player.position + directionToTotem.normalized * distanceFromPlayer;
+    void ActivateCompass()
+    {
+        isOnCooldown = true;
+        lastActivationTime = Time.time;
+    }
 
-        transform.LookAt(targetPosition);
-        transform.position = desiredPosition;
+    void UpdateCooldown()
+    {
+        if (isOnCooldown)
+        {
+            float tiempoRestante = cooldownTime - (Time.time - lastActivationTime);
+            tiempoRestante = Mathf.Max(0f, tiempoRestante);
+
+            cooldownText.text = tiempoRestante.ToString("F2");
+
+            if (Time.time - lastActivationTime >= cooldownTime)
+            {
+                isOnCooldown = false;
+                cooldownText.text = "0.00";
+            }
+        }
     }
 
     void FindClosestTotem()

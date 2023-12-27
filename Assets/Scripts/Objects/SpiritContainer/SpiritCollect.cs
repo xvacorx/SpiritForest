@@ -19,7 +19,7 @@ public class SpiritCollect : MonoBehaviour
     {
         if (compassScript != null)
         {
-            compassScript.enabled = false;
+            compassScript.compassActive = false;
         }
 
         spawner.SpawnEnemies();

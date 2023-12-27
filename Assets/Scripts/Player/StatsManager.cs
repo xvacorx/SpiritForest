@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class StatsManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    float hp;
+    private void Start()
     {
-        
+        hp = 100;
     }
-
-    // Update is called once per frame
-    void Update()
+    public void RecibirDanio(float dmg)
     {
-        
+        hp -= dmg;
+    }
+    public void Curar(float heal)
+    {
+        hp += heal;
     }
 }
