@@ -5,7 +5,7 @@ using UnityEngine;
 public class Stomper : MonoBehaviour
 {
     public float velocidadSeguimiento = 2.0f;
-    public float frecuenciaExplosion = 5.0f;
+    public float frecuenciaExplosion = 2.5f;
     public GameObject explosionPrefab;
     public float radioDanio = 2.5f;
 
@@ -13,10 +13,8 @@ public class Stomper : MonoBehaviour
 
     private void Start()
     {
-        // Buscar al jugador al comienzo
         jugador = GameObject.FindGameObjectWithTag("Player").transform;
 
-        // Iniciar la rutina de explosiones
         InvokeRepeating("RealizarExplosion", 0f, frecuenciaExplosion);
     }
 
@@ -42,7 +40,7 @@ public class Stomper : MonoBehaviour
             StatsManager statsManager = jugador.GetComponent<StatsManager>();
             if (statsManager != null)
             {
-                //statsManager.RecibirDanio();
+                statsManager.RecibirDanio(10);
             }
         }
     }

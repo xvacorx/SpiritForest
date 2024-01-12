@@ -18,7 +18,7 @@ public class Compass : MonoBehaviour
     float lastActivationTime;
 
     public bool compassActive = true;
-    public float cooldownTime = 10f;
+    public float cooldownTime = 30f;
     public TextMeshProUGUI cooldownText;
 
     void Start()
@@ -89,12 +89,12 @@ public class Compass : MonoBehaviour
             float tiempoRestante = cooldownTime - (Time.time - lastActivationTime);
             tiempoRestante = Mathf.Max(0f, tiempoRestante);
 
-            cooldownText.text = tiempoRestante.ToString("F2");
+            cooldownText.text = tiempoRestante.ToString("F2") + "s";
 
             if (Time.time - lastActivationTime >= cooldownTime)
             {
                 isOnCooldown = false;
-                cooldownText.text = "0.00";
+                cooldownText.text = " ";
             }
         }
     }

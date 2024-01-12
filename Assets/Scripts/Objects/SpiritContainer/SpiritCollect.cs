@@ -23,7 +23,7 @@ public class SpiritCollect : MonoBehaviour
         }
 
         spawner.SpawnEnemies();
-        Instantiate(emptyContainer, transform.position, Quaternion.identity);
+        Instantiate(emptyContainer, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 }

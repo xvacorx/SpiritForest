@@ -155,6 +155,7 @@ GameObject:
   - component: {fileID: 8159782674195772477}
   - component: {fileID: 2786712151064316462}
   - component: {fileID: 1934408882042921752}
+  - component: {fileID: -3348572076828186916}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -335,3 +336,15 @@ MonoBehaviour:
   projectileSpawnPoint: {fileID: 8544422955867404128}
   projectileSpeed: 20
   attackSpeed: 2
+--- !u!114 &-3348572076828186916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8216748677429746322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7174b6b011101f4683dbbbf37df18ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
