@@ -722,6 +722,7 @@ GameObject:
   - component: {fileID: 8406845055882037675}
   - component: {fileID: -4830213405549580155}
   - component: {fileID: 8363114732938923877}
+  - component: {fileID: 6482469087831948910}
   m_Layer: 0
   m_Name: LittleGhost_LP (2)
   m_TagString: Enemy
@@ -830,10 +831,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9194e7891348544f8a539c99384d738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadSeguimiento: 1.5
-  frecuenciaExplosion: 5
+  velocidadSeguimiento: 2
+  frecuenciaExplosion: 3
   explosionPrefab: {fileID: 3432958286849152088, guid: 87ee7299dd44ed747af24dbb91bcd33b, type: 3}
-  radioDanio: 2.5
+  radioDanio: 4
 --- !u!114 &8363114732938923877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -846,8 +847,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca77f298a36aa51479d9893805d4fac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 100
   efectoAlMorirPrefab: {fileID: 5985634496115995773, guid: 463cf9f7af4680240898f6aeba3fe3e6, type: 3}
+--- !u!114 &6482469087831948910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8406845055882037674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2114f81948a6fcf4e8e26bf1e2bbfdd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heal: {fileID: 8429152465523046496, guid: 5d60d426cfff4394dbe9bbc34355bb07, type: 3}
+  dropProbability: 0.25
 --- !u!1 &8406845055918955520
 GameObject:
   m_ObjectHideFlags: 0

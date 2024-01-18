@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Bull : MonoBehaviour
 {
-    public float velocidadSeguimiento = 5.0f;
-    public float fuerzaEmpuje = 10.0f;
+    float velocidadSeguimiento = 4.0f;
 
     private Transform jugador;
 
@@ -26,10 +25,6 @@ public class Bull : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Vector3 direccionContraria = (transform.position - jugador.position).normalized;
-
-            GetComponent<Rigidbody>().AddForce(direccionContraria * fuerzaEmpuje, ForceMode.Impulse);
-
             StatsManager statsManager = collision.gameObject.GetComponent<StatsManager>();
             if (statsManager != null)
             {

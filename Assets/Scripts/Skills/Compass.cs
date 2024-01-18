@@ -51,11 +51,7 @@ public class Compass : MonoBehaviour
 
         if (compassActive)
         {
-            if (targetTotem == null)
-            {
-                FindClosestTotem();
-                return;
-            }
+            FindClosestTotem();
 
             float distanceToTotem = Vector3.Distance(player.position, targetTotem.position);
 
