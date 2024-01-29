@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1176110778700935948}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: ActiveTotem
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 6104919482295862404}
   m_Layer: 0
   m_Name: Fire
-  m_TagString: ActiveTotem
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5037,7 +5037,7 @@ GameObject:
   - component: {fileID: 6106419095633705976}
   m_Layer: 0
   m_Name: Sparks
-  m_TagString: ActiveTotem
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9879,7 +9879,7 @@ GameObject:
   - component: {fileID: 6104994984660941658}
   m_Layer: 0
   m_Name: Smoke
-  m_TagString: ActiveTotem
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14721,7 +14721,7 @@ GameObject:
   - component: {fileID: 6104786840102053626}
   m_Layer: 0
   m_Name: Magic fire 0
-  m_TagString: ActiveTotem
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19568,7 +19568,7 @@ GameObject:
   - component: {fileID: 2567893758254977573}
   m_Layer: 0
   m_Name: Group8801
-  m_TagString: ActiveTotem
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
