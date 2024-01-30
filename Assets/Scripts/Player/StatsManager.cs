@@ -15,6 +15,7 @@ public class StatsManager : MonoBehaviour
     {
         hp = 100;
         UpdateHealthUI();
+        Time.timeScale = 1.0f;
     }
 
     private void Update()

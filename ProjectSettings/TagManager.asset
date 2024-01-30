@@ -9,6 +9,7 @@ TagManager:
   - Suelo
   - Enemy
   - Heal
+  - Portal
   layers:
   - Default
   - TransparentFX

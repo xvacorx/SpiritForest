@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using TMPro;
 using UnityEngine;
+using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class Compass : MonoBehaviour
 {
@@ -100,15 +101,26 @@ public class Compass : MonoBehaviour
         GameObject[] totems = GameObject.FindGameObjectsWithTag("ActiveTotem");
         float closestDistance = Mathf.Infinity;
 
-        foreach (GameObject totem in totems)
+        if (totems.Length > 0)
         {
-            float distance = Vector3.Distance(player.position, totem.transform.position);
-
-            if (distance < closestDistance)
+            foreach (GameObject totem in totems)
             {
-                closestDistance = distance;
-                targetTotem = totem.transform;
+                float distance = Vector3.Distance(player.position, totem.transform.position);
+
+                if (distance < closestDistance)
+                {
+                    closestDistance = distance;
+                    targetTotem = totem.transform;
+                }
             }
+        }
+        else
+        {
+            GameObject portal = GameObject.FindGameObjectWithTag("Portal");
+            float distance = Vector3.Distance(player.position, portal.transform.position);
+
+            closestDistance = distance;
+            targetTotem = portal.transform;
         }
     }
 }
