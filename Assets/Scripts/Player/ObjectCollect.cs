@@ -11,4 +11,11 @@ public class ObjectCollect : MonoBehaviour
             spirit.CollectSpirit();
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Portal"))
+        {
+
+        }
+    }
 }
