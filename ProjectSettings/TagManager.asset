@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Heal
   - Portal
+  - Sound
   layers:
   - Default
   - TransparentFX
