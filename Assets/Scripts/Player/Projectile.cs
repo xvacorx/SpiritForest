@@ -13,7 +13,7 @@ public class Projectile : MonoBehaviour
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
-        if (!collision.CompareTag("Player"))
+        if (!collision.CompareTag("Player")&&!collision.CompareTag("Sound"))
         {
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
