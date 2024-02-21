@@ -12,7 +12,6 @@ public class Audio : MonoBehaviour
 
         if (enemies.Length > 0)
         {
-            globalAudioSource.enabled = false;
             battleAudioSource.enabled = true;
         }
         else
