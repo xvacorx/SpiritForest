@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4495005, g: 0.49649453, b: 0.55914503, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -658,7 +658,7 @@ GameObject:
   - component: {fileID: 61482779}
   m_Layer: 0
   m_Name: Audio
-  m_TagString: Untagged
+  m_TagString: Sound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3948,7 +3948,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &340422207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5859,7 +5859,7 @@ GameObject:
   - component: {fileID: 566372487}
   m_Layer: 0
   m_Name: Audio
-  m_TagString: Untagged
+  m_TagString: Sound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6337,7 +6337,7 @@ GameObject:
   - component: {fileID: 609070382}
   m_Layer: 0
   m_Name: Audio
-  m_TagString: Untagged
+  m_TagString: Sound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12068,7 +12068,7 @@ GameObject:
   - component: {fileID: 1067379664}
   m_Layer: 0
   m_Name: Audio
-  m_TagString: Untagged
+  m_TagString: Sound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13300,7 +13300,7 @@ GameObject:
   - component: {fileID: 1160610544}
   m_Layer: 0
   m_Name: Audio
-  m_TagString: Untagged
+  m_TagString: Sound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17672,7 +17672,7 @@ GameObject:
   - component: {fileID: 1579259585}
   m_Layer: 0
   m_Name: Audio
-  m_TagString: Untagged
+  m_TagString: Sound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18169,7 +18169,7 @@ GameObject:
   - component: {fileID: 1614836441}
   m_Layer: 0
   m_Name: Audio
-  m_TagString: Untagged
+  m_TagString: Sound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19959,7 +19959,7 @@ GameObject:
   - component: {fileID: 1869244699}
   m_Layer: 0
   m_Name: Audio
-  m_TagString: Untagged
+  m_TagString: Sound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22570,7 +22570,7 @@ GameObject:
   - component: {fileID: 2102133982}
   m_Layer: 0
   m_Name: Audio
-  m_TagString: Untagged
+  m_TagString: Sound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
