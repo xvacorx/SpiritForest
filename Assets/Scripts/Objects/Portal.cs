@@ -22,6 +22,7 @@ public class PortalController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            Cursor.lockState = CursorLockMode.None;
             SceneManager.LoadScene("Win");
         }
     }
